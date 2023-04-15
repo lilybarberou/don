@@ -40,6 +40,10 @@ export default function ModalDon({toggle, display}) {
 const S = {};
 S.Modal = styled(Modal)`
     width: 350px !important;
+
+    button {
+        padding: 13px 35px !important;
+    }
 `;
 
 S.Form = styled.div`
