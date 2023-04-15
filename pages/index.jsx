@@ -7,7 +7,6 @@ import ModalRes from '@components/ModalRes';
 import Loading from '@components/Loading';
 import ModalReasons from '@components/ModalReasons';
 import Loader from '@components/Loader';
-import GoOnDesktop from '@components/GoDesktop';
 
 export default function Home() {
     const [displayModalDon, setDisplayModalDon] = useState(false);
@@ -50,9 +49,8 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            <Loader loading={loading}/>
             <S.Container>
-                <GoOnDesktop/>
-                <Loader loading={loading}/>
                 <S.LeftContent>
                     <h1>À l'aide !</h1>
                     <div>
@@ -110,6 +108,11 @@ S.Container = styled.div`
     grid-template-columns: 1fr 1fr;
     width: 100%;
     height: 100%;
+
+    @media (max-width: 800px) {
+        display: flex;
+        position: relative;
+    }
 `;
 
 S.LeftContent = styled.div`
@@ -145,9 +148,8 @@ S.LeftContent = styled.div`
     .more-reasons {
         cursor: pointer;
         font-size: 15px;
-        background: linear-gradient(97.2deg,#FF3E3E 2.76%,#972ED9 27%);
-        -webkit-background-clip: text;
         font-weight: bold;
+        width: fit-content;
     }
 
     > div {
@@ -158,6 +160,30 @@ S.LeftContent = styled.div`
         top: 50%;
         transform: translateY(-50%);
     }
+
+    @media (max-width: 800px) {
+        width: 100%;
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 100px;
+        }
+
+        p {
+            font-size: 16px;
+            max-width: 370px;
+        }
+
+        > div {
+            gap: 15px;
+            position: unset;
+            transform: unset;
+        }
+
+        .more-reasons {
+            margin-top: auto;
+        }
+    }
 `;
 
 S.RightContent = styled.div`
@@ -165,6 +191,14 @@ S.RightContent = styled.div`
     justify-content: center;
     flex-direction: column;
     position: relative;
+
+    @media (max-width: 800px) {
+        position: absolute;
+        z-index: -1;
+        align-items: flex-end;
+        height: 100%;
+        width: 100%;
+    }
 `;
 
 S.Image = styled.div`
@@ -188,6 +222,19 @@ S.Image = styled.div`
         width: 100%;
         max-width: 500px;
         height: auto;
+    }
+
+    @media (max-width: 800px) {
+        z-index: -1;
+        filter: blur(8px) brightness(50%);
+
+        div {
+            width: 250px;
+        }
+        
+        img {
+            width: 200px;
+        }
     }
 `;
 
@@ -222,5 +269,14 @@ S.Don = styled.div`
     svg {
         height: 20px;
         fill: white;
+    }
+
+    @media (max-width: 800px) {
+        span {
+            font-size: 14px;
+        }
+        svg {
+            height: 18px;
+        }
     }
 `;

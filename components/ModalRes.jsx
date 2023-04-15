@@ -33,4 +33,10 @@ S.Modal = styled(Modal)`
     img {
         width: 80%;
     }
+
+    @media (max-width: 800px) {
+        h1 {
+            font-size: 23px;
+        }
+    }
 `;

@@ -25,13 +25,18 @@ const GlobalStyle = createGlobalStyle`
         color: white;
         font-family: 'Raleway', sans-serif;
         font-weight: 400;
-        padding: 80px 80px;
+        padding: 80px;
         box-sizing: border-box;
         max-width: 1300px;
         margin: auto;
         height: 100vh;
         display: flex;
         align-items: center;
+
+        @media (max-width: 800px) {
+            padding: 40px;
+            height: 100svh;
+        }
     }
 
     #__next {

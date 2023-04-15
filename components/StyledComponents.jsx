@@ -27,6 +27,15 @@ export const Button = styled.button`
         width: 40px;
         fill: white;
     }
+
+
+    @media (max-width: 800px) {
+        font-size: 14px;
+
+        svg {
+            width: 30px;
+        }
+    }
 `
 
 export const ModalBg = styled.div`
@@ -81,5 +90,9 @@ export const Modal = styled.div`
         height: 20px;
         fill: white;
         cursor: pointer;
+    }
+
+    @media (max-width: 800px) {
+        max-width: 90% !important;
     }
 `

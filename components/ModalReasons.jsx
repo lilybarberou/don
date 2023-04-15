@@ -30,4 +30,10 @@ S.Modal = styled(Modal)`
             content: '• ';
         }
     }
+
+    @media (max-width: 800px) {
+        h1 {
+            font-size: 21px;
+        }
+    }
 `;
