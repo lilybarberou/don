@@ -1,7 +1,11 @@
 {
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./*"]
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@components/*": ["components/*"],
+            "@containers/*": ["containers/*"],
+            "@contexts/*": ["contexts/*"],
+            "@public/*": ["public/*"],
+        }
     }
-  }
 }
