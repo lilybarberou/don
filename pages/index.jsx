@@ -166,7 +166,7 @@ S.LeftContent = styled.div`
 
         h1 {
             font-size: 50px;
-            margin-bottom: 100px;
+            margin-bottom: 90px;
         }
 
         p {
@@ -226,7 +226,8 @@ S.Image = styled.div`
 
     @media (max-width: 800px) {
         z-index: -1;
-        filter: blur(8px) brightness(50%);
+        filter: blur(4px) brightness(50%);
+        margin-bottom: 25px;
 
         div {
             width: 250px;
