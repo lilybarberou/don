@@ -7,6 +7,7 @@ import ModalRes from '@components/ModalRes';
 import Loading from '@components/Loading';
 import ModalReasons from '@components/ModalReasons';
 import Loader from '@components/Loader';
+import GoOnDesktop from '@components/GoDesktop';
 
 export default function Home() {
     const [displayModalDon, setDisplayModalDon] = useState(false);
@@ -50,6 +51,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <S.Container>
+                <GoOnDesktop/>
                 <Loader loading={loading.current}/>
                 <S.LeftContent>
                     <h1>À l'aide !</h1>

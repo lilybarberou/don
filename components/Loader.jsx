@@ -14,13 +14,14 @@ export default function Loader({loading, children}) {
             }, 600);
         }
     }, [loading])
+    
     return (
         <S.Container ref={container}>
-            <div class="container">
-                <span class="circle"></span>
-                <span class="circle"></span>
-                <span class="circle"></span>
-                <span class="circle"></span>
+            <div className="container">
+                <span className="circle"></span>
+                <span className="circle"></span>
+                <span className="circle"></span>
+                <span className="circle"></span>
             </div>
         </S.Container>
     );
