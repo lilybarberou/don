@@ -53,6 +53,10 @@ S.Form = styled.div`
         gap: 5px;
     }
 
+    label {
+        font-size: 15px;
+    }
+
     input {
         border: none;
         padding: 8px 15px;
