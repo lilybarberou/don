@@ -6,6 +6,9 @@ export default async function handler(req, res) {
 
     // GET LAST PAYMENT INFO
     const sessions = await stripe.checkout.sessions.list({ limit: 1 });
+
+    if (!sessions.data.length) return res.status(200).json({ success: false });
+
     const lastSession = sessions.data[0];
     const donationName = lastSession.metadata.name;
     const donationAmount = lastSession.amount_subtotal / 100;

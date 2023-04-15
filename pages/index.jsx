@@ -15,7 +15,7 @@ export default function Home() {
     const [displayReasonsModal, setDisplayReasonsModal] = useState(false);
     const currentInfoInit = {donationName: 'Personne snif', donationAmount: 0, totalAmount: 0};
     const [currentInfos, setCurrentInfos] = useState(currentInfoInit);
-    const loading = useRef(true);
+    const [loading, setLoading] = useState(true);
     const amountRemaining = process.env.NEXT_PUBLIC_PRICE - currentInfos.totalAmount;
 
     useEffect(() => {
@@ -31,7 +31,7 @@ export default function Home() {
             const res = await fetch('/api/current');
             const data = await res.json();
 
-            loading.current = false;
+            setLoading(false);
             setCurrentInfos(data.success ? data.data : currentInfoInit);
         }
 
@@ -52,7 +52,7 @@ export default function Home() {
             </Head>
             <S.Container>
                 <GoOnDesktop/>
-                <Loader loading={loading.current}/>
+                <Loader loading={loading}/>
                 <S.LeftContent>
                     <h1>À l'aide !</h1>
                     <div>
@@ -91,7 +91,7 @@ export default function Home() {
                                 />
                             </svg>
                         </span>
-                        <Loading loading={loading.current}>
+                        <Loading loading={loading}>
                             <span>{currentInfos.donationName} - {currentInfos.donationAmount}€</span>
                         </Loading>
                     </S.Don>
