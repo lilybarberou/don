@@ -54,7 +54,7 @@ export default function Home() {
                 <S.LeftContent>
                     <h1>À l'aide !</h1>
                     <div>
-                        <p>À cause de son entreprise, Lily s’est fait piéger dans l’écosystème Apple.</p>
+                        <p>À cause de son entreprise, Lily s’est faite piéger dans l’écosystème Apple.</p>
                         <p>
                             Il ne lui manque plus que <span>{amountRemaining} euros</span> pour s’épanouir pleinement dans son métier.
                         </p>
